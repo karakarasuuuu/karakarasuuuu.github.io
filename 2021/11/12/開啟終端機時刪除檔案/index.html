@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>烏</title>
+  <title>開啟終端機時刪除檔案 | 烏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="A note for myself.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="烏">
-<meta property="og:url" content="https://karakarasuuuu.github.io/index.html">
+  <meta name="description" content="常常會打開終端機，然後在桌面寫一些小程式做測試。這個時候，如果上次沒注意到，vim 就會在打開的時候噴出前潮遺毒上次做的東西，看到了心情都會有點 ak-tsak。但不用擔心，shell scripts 可以幫你這個忙！ .bashrc位子在 &#x2F;home&#x2F;[username]&#x2F;（或 ~）的 .bashrc 是一個會在開啟終端機自動執行的檔案－我的環境是 WSL 的 Ubuntu，預設殼層是 bash">
+<meta property="og:type" content="article">
+<meta property="og:title" content="開啟終端機時刪除檔案">
+<meta property="og:url" content="https://karakarasuuuu.github.io/2021/11/12/%E9%96%8B%E5%95%9F%E7%B5%82%E7%AB%AF%E6%A9%9F%E6%99%82%E5%88%AA%E9%99%A4%E6%AA%94%E6%A1%88/index.html">
 <meta property="og:site_name" content="烏">
-<meta property="og:description" content="A note for myself.">
+<meta property="og:description" content="常常會打開終端機，然後在桌面寫一些小程式做測試。這個時候，如果上次沒注意到，vim 就會在打開的時候噴出前潮遺毒上次做的東西，看到了心情都會有點 ak-tsak。但不用擔心，shell scripts 可以幫你這個忙！ .bashrc位子在 &#x2F;home&#x2F;[username]&#x2F;（或 ~）的 .bashrc 是一個會在開啟終端機自動執行的檔案－我的環境是 WSL 的 Ubuntu，預設殼層是 bash">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-12T15:37:10.000Z">
+<meta property="article:modified_time" content="2021-11-12T15:57:39.474Z">
 <meta property="article:author" content="karasu">
 <meta property="article:tag" content="note">
 <meta name="twitter:card" content="summary">
@@ -72,9 +74,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-開啟終端機時刪除檔案" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-開啟終端機時刪除檔案" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/11/12/%E9%96%8B%E5%95%9F%E7%B5%82%E7%AB%AF%E6%A9%9F%E6%99%82%E5%88%AA%E9%99%A4%E6%AA%94%E6%A1%88/" class="article-date">
   <time class="dt-published" datetime="2021-11-12T15:37:10.000Z" itemprop="datePublished">2021-11-12</time>
@@ -87,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/12/%E9%96%8B%E5%95%9F%E7%B5%82%E7%AB%AF%E6%A9%9F%E6%99%82%E5%88%AA%E9%99%A4%E6%AA%94%E6%A1%88/">開啟終端機時刪除檔案</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      開啟終端機時刪除檔案
     </h1>
   
 
@@ -117,56 +117,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-簡談壓縮" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/10/%E7%B0%A1%E8%AB%87%E5%A3%93%E7%B8%AE/" class="article-date">
-  <time class="dt-published" datetime="2021-11-09T17:25:27.000Z" itemprop="datePublished">2021-11-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/10/%E7%B0%A1%E8%AB%87%E5%A3%93%E7%B8%AE/">簡談壓縮</a>
-    </h1>
+    <a href="/2021/11/10/%E7%B0%A1%E8%AB%87%E5%A3%93%E7%B8%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">簡談壓縮</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>常常會聽到<strong>無損壓縮</strong>這樣的詞彙，總是讓我感到很困惑。感覺<strong>無損</strong>跟<strong>壓縮</strong>是衝突的，若是壓縮東西，勢必會犧牲一些掉。<br>但其實這兩樣屬性是可以同時存在的，只要使用一些專業知識就行。</p>
-<h2 id="壓縮"><a href="#壓縮" class="headerlink" title="壓縮"></a>壓縮</h2><p>先簡單談一下壓縮，很簡單很簡單的那種。<br>假設有個數字是 <strong>1225</strong>，它是一個四位數字。<br>這時候我們有兩種方式可以去壓縮它：</p>
-<h3 id="無損壓縮"><a href="#無損壓縮" class="headerlink" title="無損壓縮"></a>無損壓縮</h3><p>很簡單，把它當作 <strong>35 的平方</strong>就行了。如果你有一個特別的資料型態，可以分別儲存底跟次方，那你看，不就變成兩位數的 35 跟一位數的 2（次方）了嗎？<br>（這是非常簡略的講法，甚至實際上根本有可能不是這樣運作，只是稍微簡述一下概念。）</p>
-<h3 id="有損壓縮"><a href="#有損壓縮" class="headerlink" title="有損壓縮"></a>有損壓縮</h3><p>更簡單，把這個數字當成<strong>一千多</strong>就行，只是多多少？不曉得。後面的位數就是流失的資料了。</p>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>從上面的例子來看，我們可以知道改變資訊儲存的方式，就能夠讓資訊所佔的儲存空間 (?) 有變化。<br>以 <strong>35 的平方</strong>來看，如果我們把它視為 <strong>352</strong>，這樣相比之下不就少了一個位數嗎？只是需要另外的表現方式去理解它。<br>而若是把<strong>一千多</strong>當作 <strong>1___</strong> 來看，更是可以把千位數以外的資訊都捨棄，只需要一個數字就能儲存原本需要四個的資訊（只是會有所損失）。  </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://karakarasuuuu.github.io/2021/11/10/%E7%B0%A1%E8%AB%87%E5%A3%93%E7%B8%AE/" data-id="ckvwkeumk000091090w2905el" data-title="簡談壓縮" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/note/" rel="tag">note</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
 
 
 </section>
