@@ -74,6 +74,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-likecoin" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/likecoin/" class="article-date">
+  <time class="dt-published" datetime="2021-12-07T14:19:29.000Z" itemprop="datePublished">2021-12-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/likecoin/">新增了 Like Coin 讚賞公民的按鈕跟調整了一些設定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Like-Coin-讚賞公民的按鈕"><a href="#Like-Coin-讚賞公民的按鈕" class="headerlink" title="Like Coin 讚賞公民的按鈕"></a>Like Coin 讚賞公民的按鈕</h2><p>就像這篇文章下面（以前的也有更新！）的那個一樣，既然是 Markdown 語法，那我以前在 HackMD 上做的設定應該也能搬過來用吧？<br>這樣想著就去複製過來了，發現稍微改一點連結之後就能用，應該沒有問題。<br>程式碼大概長這樣：  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">width</span>=<span class="string">100%</span> <span class="attr">height</span>=<span class="string">200px</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://button.like.co/in/embed/&lt;你的 Liker ID&gt;/button?referrer=&lt;文章的連結&gt;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>忘記是哪裡找來的，也沒有留下資料，所以就沒有 Reference 了…  </p>
+<h3 id="當成範本"><a href="#當成範本" class="headerlink" title="當成範本"></a>當成範本</h3><p>在 Hexo 裡面稱為 <strong>layout</strong>（佈局）（<a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/writing">官方文件</a>），存放在 <code>scaffolds</code> 資料夾下面的 <code>post.md</code> 會是你使用 <code>hexo new &lt;title&gt;</code> 時預設取用的範本（沒有指定 layout 的情況下）。把上述的原始碼放進去就可以在每次新增文章時自動帶入。  </p>
+<h2 id="調了設定"><a href="#調了設定" class="headerlink" title="調了設定"></a>調了設定</h2><p>突然覺得網址按照年月日安排有點礙眼（？），所以就照著 Hexo 的<a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>把原先在 <code>_config.yml</code> 裡 <code>permalink</code> 預設的 <code>:year/:month/:day/:title/</code> 改成 <code>blog/:title/</code> －沒錯，為了預留之後其他 repository 會用到 GitHub Pages，特別加上了 <code>blog</code> &gt;_&lt;  </p>
+<hr>
+<p>如果你喜歡這篇文章，請按照程度替我按 1~5 個讚！<br>歡迎加入讚賞公民的行列！不需要花費任何金錢，只要你辦個帳號就可以按讚了！</p>
+<iframe width=100% height=200px scrolling="no" frameborder="0" src="https://button.like.co/in/embed/karasu_10969/button?referrer=https://karakarasuuuu.github.io/blog/URL/"></iframe>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://karakarasuuuu.github.io/blog/likecoin/" data-id="ckww7jsk60000gb09a8a9h6eq" data-title="新增了 Like Coin 讚賞公民的按鈕跟調整了一些設定" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-remove-files-when-starting-terminal" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/remove-files-when-starting-terminal/" class="article-date">
@@ -96,7 +144,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>常常會打開終端機，然後在桌面寫一些小程式做測試。<br>這個時候，如果上次沒注意到，vim 就會在打開的時候噴出<del>前潮遺毒</del>上次做的東西，看到了心情都會有點 ak-tsak。<br>但不用擔心，shell scripts 可以幫你這個忙！</p>
+        <p>常常會打開終端機，然後在桌面寫一些小程式做測試。<br>這個時候，如果上次沒注意到，vim 就會在打開的時候噴出<del>前朝遺毒</del>上次做的東西，看到了心情都會有點 ak-tsak。<br>但不用擔心，shell scripts 可以幫你這個忙！</p>
 <h2 id="bashrc"><a href="#bashrc" class="headerlink" title=".bashrc"></a>.bashrc</h2><p>位子在 <code>/home/[username]/</code>（或 <code>~</code>）的 <code>.bashrc</code> 是一個會在開啟終端機自動執行的檔案－我的環境是 WSL 的 Ubuntu，預設殼層是 bash，所以是 bashrc。如果用的是其他應用程式，例如 zsh 的話，就會是 <code>.zshrc</code>，以此類推－今天要做的就是把 shell scripts 放在這裡，讓終端機在開啟的時候幫我們刪檔案。  </p>
 <h2 id="shell-scripts"><a href="#shell-scripts" class="headerlink" title="shell scripts"></a>shell scripts</h2><p><code>rm t.c</code>－就這麼簡單！  </p>
 <p>如果你這麼想的話，也就沒有必要寫這篇文章了。如果只是單純把這行指令放進 <code>.bashrc</code> 裡面，就有機會在開機時看到 <code>rm: cannot remove &#39;t.c&#39;: No such file or directory</code>－這是為什麼呢？<br>因為並不是每次都會有這個檔案存在，有時候可能沒有寫，或者是上次寫完之後有記得刪掉，都會跑出這個錯誤。如果不想要看見這個個 ak-tsak 的東西，我們就有必要去判斷檔案是否存在，然後再決定要不要 <code>rm</code>。</p>
@@ -106,12 +154,12 @@
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="http://linux.vbird.org/linux_basic/0340bashshell-scripts.php">鳥哥的 Linux 私房菜－第十二章、學習 Shell Scripts</a></p>
 <hr>
 <p>如果你喜歡這篇文章，請按照程度替我按 1~5 個讚！<br>歡迎加入讚賞公民的行列！不需要花費任何金錢，只要你辦個帳號就可以按讚了！</p>
- <iframe width=100% height=200px scrolling="no" frameborder="0" src="https://button.like.co/in/embed/karasu_10969/button?referrer=https://karakarasuuuu.github.io/blog/remov-files-when-starting-terminal"></iframe>
+ <iframe width=100% height=200px scrolling="no" frameborder="0" src="https://button.like.co/in/embed/karasu_10969/button?referrer=https://karakarasuuuu.github.io/blog/remov-files-when-starting-terminal/"></iframe>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://karakarasuuuu.github.io/blog/remove-files-when-starting-terminal/" data-id="ckww5w80t0003q90958o67x4o" data-title="開啟終端機時刪除檔案" class="article-share-link">Share</a>
+      <a data-url="https://karakarasuuuu.github.io/blog/remove-files-when-starting-terminal/" data-id="ckww7jske0006gb09exurbq82" data-title="開啟終端機時刪除檔案" class="article-share-link">Share</a>
       
       
       
@@ -154,12 +202,12 @@
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>從上面的例子來看，我們可以知道改變資訊儲存的方式，就能夠讓資訊所佔的儲存空間 (?) 有變化。<br>以 <strong>35 的平方</strong>來看，如果我們把它視為 <strong>352</strong>，這樣相比之下不就少了一個位數嗎？只是需要另外的表現方式去理解它。<br>而若是把<strong>一千多</strong>當作 <strong>1___</strong> 來看，更是可以把千位數以外的資訊都捨棄，只需要一個數字就能儲存原本需要四個的資訊（只是會有所損失）。  </p>
 <hr>
 <p>如果你喜歡這篇文章，請按照程度替我按 1~5 個讚！<br>歡迎加入讚賞公民的行列！不需要花費任何金錢，只要你辦個帳號就可以按讚了！</p>
- <iframe width=100% height=200px scrolling="no" frameborder="0" src="https://button.like.co/in/embed/karasu_10969/button?referrer=https://karakarasuuuu.github.io/compression"></iframe>
+ <iframe width=100% height=200px scrolling="no" frameborder="0" src="https://button.like.co/in/embed/karasu_10969/button?referrer=https://karakarasuuuu.github.io/compression/"></iframe>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://karakarasuuuu.github.io/blog/compression/" data-id="ckww5w80m0000q9094x61av4u" data-title="簡談壓縮" class="article-share-link">Share</a>
+      <a data-url="https://karakarasuuuu.github.io/blog/compression/" data-id="ckww7jska0001gb0966gy4wvy" data-title="簡談壓縮" class="article-share-link">Share</a>
       
       
       
@@ -186,7 +234,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a></li></ul>
     </div>
   </div>
 
@@ -196,7 +244,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/note/" style="font-size: 10px;">note</a>
+      <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/note/" style="font-size: 20px;">note</a>
     </div>
   </div>
 
@@ -205,7 +253,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
     </div>
   </div>
 
@@ -216,6 +264,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/likecoin/">新增了 Like Coin 讚賞公民的按鈕跟調整了一些設定</a>
+          </li>
         
           <li>
             <a href="/blog/remove-files-when-starting-terminal/">開啟終端機時刪除檔案</a>
