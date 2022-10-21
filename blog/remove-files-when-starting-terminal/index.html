@@ -6,15 +6,15 @@
   
   <title>開啟終端機時刪除檔案 | 烏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="常常會打開終端機，然後在桌面寫一些小程式做測試。這個時候，如果上次沒注意到，vim 就會在打開的時候噴出前朝遺毒上次做的東西，看到了心情都會有點 ak-tsak。但不用擔心，shell scripts 可以幫你這個忙！ .bashrc位子在 &#x2F;home&#x2F;[username]&#x2F;（或 ~）的 .bashrc 是一個會在開啟終端機自動執行的檔案－我的環境是 WSL 的 Ubuntu，預設殼層是 bash">
+  <meta name="description" content="常常會打開終端機，然後在桌面寫一些小程式做測試。這個時候，如果上次沒注意到，vim 就會在打開的時候噴出前朝遺毒上次做的東西，看到了心情都會有點 ak-tsak。但不用擔心，shell scripts 可以幫你這個忙！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="開啟終端機時刪除檔案">
 <meta property="og:url" content="https://karakarasuuuu.github.io/blog/remove-files-when-starting-terminal/index.html">
 <meta property="og:site_name" content="烏">
-<meta property="og:description" content="常常會打開終端機，然後在桌面寫一些小程式做測試。這個時候，如果上次沒注意到，vim 就會在打開的時候噴出前朝遺毒上次做的東西，看到了心情都會有點 ak-tsak。但不用擔心，shell scripts 可以幫你這個忙！ .bashrc位子在 &#x2F;home&#x2F;[username]&#x2F;（或 ~）的 .bashrc 是一個會在開啟終端機自動執行的檔案－我的環境是 WSL 的 Ubuntu，預設殼層是 bash">
+<meta property="og:description" content="常常會打開終端機，然後在桌面寫一些小程式做測試。這個時候，如果上次沒注意到，vim 就會在打開的時候噴出前朝遺毒上次做的東西，看到了心情都會有點 ak-tsak。但不用擔心，shell scripts 可以幫你這個忙！">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-12T15:37:10.000Z">
-<meta property="article:modified_time" content="2021-12-09T17:08:58.860Z">
+<meta property="article:modified_time" content="2022-10-21T09:35:41.054Z">
 <meta property="article:author" content="karasu">
 <meta property="article:tag" content="note">
 <meta name="twitter:card" content="summary">
@@ -97,10 +97,23 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>常常會打開終端機，然後在桌面寫一些小程式做測試。<br>這個時候，如果上次沒注意到，vim 就會在打開的時候噴出<del>前朝遺毒</del>上次做的東西，看到了心情都會有點 ak-tsak。<br>但不用擔心，shell scripts 可以幫你這個忙！</p>
-<h2 id="bashrc"><a href="#bashrc" class="headerlink" title=".bashrc"></a>.bashrc</h2><p>位子在 <code>/home/[username]/</code>（或 <code>~</code>）的 <code>.bashrc</code> 是一個會在開啟終端機自動執行的檔案－我的環境是 WSL 的 Ubuntu，預設殼層是 bash，所以是 bashrc。如果用的是其他應用程式，例如 zsh 的話，就會是 <code>.zshrc</code>，以此類推－今天要做的就是把 shell scripts 放在這裡，讓終端機在開啟的時候幫我們刪檔案。  </p>
-<h2 id="shell-scripts"><a href="#shell-scripts" class="headerlink" title="shell scripts"></a>shell scripts</h2><p><code>rm t.c</code>－就這麼簡單！  </p>
-<p>如果你這麼想的話，也就沒有必要寫這篇文章了。如果只是單純把這行指令放進 <code>.bashrc</code> 裡面，就有機會在開機時看到 <code>rm: cannot remove &#39;t.c&#39;: No such file or directory</code>－這是為什麼呢？<br>因為並不是每次都會有這個檔案存在，有時候可能沒有寫，或者是上次寫完之後有記得刪掉，都會跑出這個錯誤。如果不想要看見這個個 ak-tsak 的東西，我們就有必要去判斷檔案是否存在，然後再決定要不要 <code>rm</code>。</p>
-<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><p>我們可以用 <code>test</code> 去檢查檔案是否存在。但在這裡會需要使用另一種寫法：<code>[ [code] ]</code>－<strong>注意中括號內都必須要有個空格！</strong><br>搭配上參數 <code>-f</code> 跟條件判斷 <code>if-then-fi</code>，整體就會長這樣：  </p>
+<!--more>
+
+## .bashrc
+
+位子在 `/home/[username]/`（或 `~`）的 `.bashrc` 是一個會在開啟終端機自動執行的檔案－我的環境是 WSL 的 Ubuntu，預設殼層是 bash，所以是 bashrc。如果用的是其他應用程式，例如 zsh 的話，就會是 `.zshrc`，以此類推－今天要做的就是把 shell scripts 放在這裡，讓終端機在開啟的時候幫我們刪檔案。  
+
+## shell scripts
+
+`rm t.c`－就這麼簡單！  
+
+如果你這麼想的話，也就沒有必要寫這篇文章了。如果只是單純把這行指令放進 `.bashrc` 裡面，就有機會在開機時看到 `rm: cannot remove 't.c': No such file or directory`－這是為什麼呢？  
+因為並不是每次都會有這個檔案存在，有時候可能沒有寫，或者是上次寫完之後有記得刪掉，都會跑出這個錯誤。如果不想要看見這個個 ak-tsak 的東西，我們就有必要去判斷檔案是否存在，然後再決定要不要 `rm`。
+
+### test
+
+我們可以用 `test` 去檢查檔案是否存在。但在這裡會需要使用另一種寫法：`[ [code] ]`－**注意中括號內都必須要有個空格！**   
+搭配上參數 `-f` 跟條件判斷 `if-then-fi`，整體就會長這樣：  
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [ -f /path/to/file/t.c ]; then</span><br><span class="line">    rm t.c</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 <p>寫完之後可以用 <code>source</code> 去檢查看看有沒有寫錯：<code>source ~/.bashrc</code><br>沒有噴錯誤就是好事（？）</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="http://linux.vbird.org/linux_basic/0340bashshell-scripts.php">鳥哥的 Linux 私房菜－第十二章、學習 Shell Scripts</a></p>
@@ -125,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://karakarasuuuu.github.io/blog/remove-files-when-starting-terminal/" data-id="cl9iahf5r00001309hhcp3xsv" data-title="開啟終端機時刪除檔案" class="article-share-link">Share</a>
+      <a data-url="https://karakarasuuuu.github.io/blog/remove-files-when-starting-terminal/" data-id="cl9iayor80000ls0921b5hscz" data-title="開啟終端機時刪除檔案" class="article-share-link">Share</a>
       
       
       
