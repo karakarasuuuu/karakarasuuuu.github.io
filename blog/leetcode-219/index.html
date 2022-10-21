@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>簡談壓縮 | 烏</title>
+  <title>leetcode-219 | 烏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="常常會聽到無損壓縮這樣的詞彙，總是讓我感到很困惑。感覺無損跟壓縮是衝突的，若是壓縮東西，勢必會犧牲一些掉。但其實這兩樣屬性是可以同時存在的，只要使用一些專業知識就行。 壓縮先簡單談一下壓縮，很簡單很簡單的那種。假設有個數字是 1225，它是一個四位數字。這時候我們有兩種方式可以去壓縮它： 無損壓縮很簡單，把它當作 35 的平方就行了。如果你有一個特別的資料型態，可以分別儲存底跟次方，那你看，不就變">
+  <meta name="description" content="如果你喜歡這篇文章，請按照程度替我按 1~5 個讚！歡迎加入讚賞公民的行列！不需要花費任何金錢，只要你辦個帳號就可以按讚了！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="簡談壓縮">
-<meta property="og:url" content="https://karakarasuuuu.github.io/blog/compression/index.html">
+<meta property="og:title" content="leetcode-219">
+<meta property="og:url" content="https://karakarasuuuu.github.io/blog/leetcode-219/index.html">
 <meta property="og:site_name" content="烏">
-<meta property="og:description" content="常常會聽到無損壓縮這樣的詞彙，總是讓我感到很困惑。感覺無損跟壓縮是衝突的，若是壓縮東西，勢必會犧牲一些掉。但其實這兩樣屬性是可以同時存在的，只要使用一些專業知識就行。 壓縮先簡單談一下壓縮，很簡單很簡單的那種。假設有個數字是 1225，它是一個四位數字。這時候我們有兩種方式可以去壓縮它： 無損壓縮很簡單，把它當作 35 的平方就行了。如果你有一個特別的資料型態，可以分別儲存底跟次方，那你看，不就變">
+<meta property="og:description" content="如果你喜歡這篇文章，請按照程度替我按 1~5 個讚！歡迎加入讚賞公民的行列！不需要花費任何金錢，只要你辦個帳號就可以按讚了！">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-09T17:25:27.000Z">
-<meta property="article:modified_time" content="2022-10-21T08:39:14.535Z">
+<meta property="article:published_time" content="2022-10-21T08:21:57.000Z">
+<meta property="article:modified_time" content="2022-10-21T08:21:57.443Z">
 <meta property="article:author" content="karasu">
 <meta property="article:tag" content="note">
 <meta name="twitter:card" content="summary">
@@ -74,10 +74,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-compression" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-leetcode-219" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/blog/compression/" class="article-date">
-  <time class="dt-published" datetime="2021-11-09T17:25:27.000Z" itemprop="datePublished">2021-11-10</time>
+    <a href="/blog/leetcode-219/" class="article-date">
+  <time class="dt-published" datetime="2022-10-21T08:21:57.000Z" itemprop="datePublished">2022-10-21</time>
 </a>
     
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      簡談壓縮
+      leetcode-219
     </h1>
   
 
@@ -96,14 +96,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>常常會聽到<strong>無損壓縮</strong>這樣的詞彙，總是讓我感到很困惑。感覺<strong>無損</strong>跟<strong>壓縮</strong>是衝突的，若是壓縮東西，勢必會犧牲一些掉。<br>但其實這兩樣屬性是可以同時存在的，只要使用一些專業知識就行。</p>
-<h2 id="壓縮"><a href="#壓縮" class="headerlink" title="壓縮"></a>壓縮</h2><p>先簡單談一下壓縮，很簡單很簡單的那種。<br>假設有個數字是 <strong>1225</strong>，它是一個四位數字。<br>這時候我們有兩種方式可以去壓縮它：</p>
-<h3 id="無損壓縮"><a href="#無損壓縮" class="headerlink" title="無損壓縮"></a>無損壓縮</h3><p>很簡單，把它當作 <strong>35 的平方</strong>就行了。如果你有一個特別的資料型態，可以分別儲存底跟次方，那你看，不就變成兩位數的 35 跟一位數的 2（次方）了嗎？<br>（這是非常簡略的講法，甚至實際上根本有可能不是這樣運作，只是稍微簡述一下概念。）</p>
-<h3 id="有損壓縮"><a href="#有損壓縮" class="headerlink" title="有損壓縮"></a>有損壓縮</h3><p>更簡單，把這個數字當成<strong>一千多</strong>就行，只是多多少？不曉得。後面的位數就是流失的資料了。</p>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>從上面的例子來看，我們可以知道改變資訊儲存的方式，就能夠讓資訊所佔的儲存空間 (?) 有變化。<br>以 <strong>35 的平方</strong>來看，如果我們把它視為 <strong>352</strong>，這樣相比之下不就少了一個位數嗎？只是需要另外的表現方式去理解它。<br>而若是把<strong>一千多</strong>當作 <strong>1___</strong> 來看，更是可以把千位數以外的資訊都捨棄，只需要一個數字就能儲存原本需要四個的資訊（只是會有所損失）。  </p>
-<hr>
+        <hr>
 <p>如果你喜歡這篇文章，請按照程度替我按 1~5 個讚！<br>歡迎加入讚賞公民的行列！不需要花費任何金錢，只要你辦個帳號就可以按讚了！</p>
- <iframe width=100% height=200px scrolling="no" frameborder="0" src="https://button.like.co/in/embed/karasu_10969/button?referrer=https://karakarasuuuu.github.io/blog/compression/"></iframe>
+ <iframe width=100% height=200px scrolling="no" frameborder="0" src="https://button.like.co/in/embed/karasu_10969/button?referrer=https://karakarasuuuu.github.io/blog/URL/"></iframe>
 
 <hr>
 <script src="https://giscus.app/client.js"
@@ -122,27 +117,21 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://karakarasuuuu.github.io/blog/compression/" data-id="cl9i8u4n90000d109f8qs37cq" data-title="簡談壓縮" class="article-share-link">Share</a>
+      <a data-url="https://karakarasuuuu.github.io/blog/leetcode-219/" data-id="cl9i8u4ni0006d1097uu1995r" data-title="leetcode-219" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/note/" rel="tag">note</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/blog/remove-files-when-starting-terminal/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          開啟終端機時刪除檔案
-        
-      </div>
-    </a>
   
+    <a href="/blog/likecoin/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">新增了 Like Coin 讚賞公民的按鈕跟調整了一些設定</div>
+    </a>
   
 </nav>
 
